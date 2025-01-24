@@ -1,3 +1,5 @@
- PROJETO EBCrud - Automação Documental para as Força Armadas
----
- Esse projeto utiliza tecnologias consideradas simples para melhor aplicação e versatilidade.
+## PROJETO EBCrud - Automação Documental para as Força Armadas
+
+Projeto pensado para facilitacao de servicoes internos do batalhao.
+
+Criado e pensado por RobertdeSMaio e lucianorreis
