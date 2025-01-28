@@ -9,17 +9,11 @@ using c_.Structure.DB;
 
 namespace c_.Domains.Services
 {
-    public class AdministradorServices(DbContexto contexto) : IAdminServices
+    public class AdministradorServices(DbContexto contexto) : IAdminServices //add verificacao do login do admin no servidor
     {
         private readonly DbContexto _contexto = contexto;
 
         public Administrador? Login(LoginDTO loginDTO)
-        {
-            var adm = _contexto.Admins.Where(a => a.Email == loginDTO.Email && a.Password == loginDTO.Password).FirstOrDefault();
-            return adm;
-        }
-
-        public Administrador? Logon(LoginDTO loginDTO)
         {
             var adm = _contexto.Admins.Where(a => a.Email == loginDTO.Email && a.Password == loginDTO.Password).FirstOrDefault();
             return adm;

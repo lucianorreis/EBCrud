@@ -7,7 +7,7 @@ using c_.Domains.DTO;
 
 namespace c_.Domains.Interfaces
 {
-    public interface IAdminServices
+    public interface IAdminServices // fixador de regras da classe admin
     {
         Administrador? Login(LoginDTO loginDTO);
     }

@@ -23,7 +23,7 @@ namespace c_.Structure.DB
         //public DbSet<CCAP> CCAP {get; set;} = default!; add entities
         //public DbSet<BADM> BADM {get; set;} = default!; add entities
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //adiciona login do admin no mysql
         {
             modelBuilder.Entity<Administrador>().HasData(
                 new Administrador {
@@ -34,7 +34,7 @@ namespace c_.Structure.DB
                 }
             );
         }
-            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //leitura da api para fazer migracao para o db
         {
             if(!optionsBuilder.IsConfigured){
                 var stringConexao = _configuracaoAppSettings.GetConnectionString("mysql")?.ToString();

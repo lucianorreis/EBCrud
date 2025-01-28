@@ -15,7 +15,7 @@ builder.Services.AddScoped<IAdminServices, AdministradorServices>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DbContexto>(
+builder.Services.AddDbContext<DbContexto>( //ligacao do db na API
     options => options.UseMySql(
     builder.Configuration.GetConnectionString("mysql"),
     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("mysql"))
@@ -26,7 +26,7 @@ var app = builder.Build();
 
 app.MapGet("/", () => Results.Json(new Home()));
 
-app.MapPost("/login", ([FromBody]LoginDTO loginDTO, IAdminServices AdministradorServices) =>
+app.MapPost("/login", ([FromBody]LoginDTO loginDTO, IAdminServices AdministradorServices) => //leitura da verificacao do login
 {
     if (AdministradorServices.Login(loginDTO) != null)
     {

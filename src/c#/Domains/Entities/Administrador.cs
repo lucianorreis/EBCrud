@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace c_.Domains.Entities
 {
-    public class Administrador
+    public class Administrador //regras da classe de administrador
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
