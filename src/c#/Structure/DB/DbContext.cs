@@ -12,7 +12,7 @@ namespace c_.Structure.DB
 {
     public class DbContexto : DbContext
     {
-        private readonly string IConfiguration _configuracaoAppSettings;
+        private readonly IConfiguration _configuracaoAppSettings;
         public DbContexto(IConfiguration configuracaoAppSettings)
         {
             _configuracaoAppSettings = configuracaoAppSettings;

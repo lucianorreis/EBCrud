@@ -8,7 +8,7 @@ using c_.Structure.DB;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IAdminServices, AdministratorService>();
+builder.Services.AddScoped<IAdminServices, AdministradorServices>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -23,6 +23,19 @@ builder.Services.AddDbContext<DbContexto>(
 );
 
 var app = builder.Build();
+
+app.MapGet("/", () => Results.Json(new Home()));
+
+app.MapPost("/login", ([FromBody]LoginDTO loginDTO, IAdminServices AdministradorServices) =>
+{
+    if (AdministradorServices.Login(loginDTO) != null)
+    {
+        return Results.Ok("Login com sucesso");
+    }else
+    {
+        return Results.Unauthorized();
+    }
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
