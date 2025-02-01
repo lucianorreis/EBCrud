@@ -1,11 +1,11 @@
 {
   "name": "ebcrud",
   "version": "1.0.0",
-  "main": "app.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.ts",
-    "dev": "nodemon src/app.ts"
+    "start": "node src/Ux/index.js",
+    "dev": "nodemon src/Ux/index.js"
   },
   "keywords": [],
   "author": "lucianorreis",
@@ -17,12 +17,17 @@
     "@types/typescript": "^0.4.29",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mysql": "^2.18.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
     "@types/mysql": "^2.15.26",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   }
 }
